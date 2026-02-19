@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Churn Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h2>Customer Churn Prediction</h2>
+
+        <form method="POST">
+            <input type="number" name="tenure" placeholder="Tenure (months)" required>
+            <input type="number" name="monthly" placeholder="Monthly Charges" required>
+
+            <select name="contract">
+                <option value="0">Month-to-Month</option>
+                <option value="1">One Year</option>
+            </select>
+
+            <select name="internet">
+                <option value="0">DSL</option>
+                <option value="1">Fiber</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <h3>{{ prediction }}</h3>
+    </div>
+</body>
+</html>
